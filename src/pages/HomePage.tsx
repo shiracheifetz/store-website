@@ -1,8 +1,9 @@
 import NavBar from '../NavBar';
 import { products } from '../products'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import type { Product } from '../products';
+import styles from './HomePage.module.css';
 
 
 function HomePage() {
@@ -22,13 +23,18 @@ function HomePage() {
         <>
             <NavBar/>
             <main>
-                {productList.map((product) => (
-                    <div key={product.id}>
-                        <img src={`/${product.image}`} alt="product image"/>
-                        <button onClick={() => navigateToPage(product.id)}>View Details</button>
-                        <p>{product.name}</p>
-                    </div>
-                ))}
+                <div className={styles.productsContainer}>
+                    {productList.map((product) => (
+                        <div key={product.id} className={styles.product}>
+                            <Link to={`/products/${product.id}`}>
+                            <img src={`/store-website/${product.image}`} alt="product image"/>
+                            </Link>
+                            <p className={styles.productName}>{product.name}</p>
+                            <p className={styles.productPrice}>${product.price}</p>
+                            <button onClick={() => navigateToPage(product.id)}>View Details</button>
+                        </div>
+                    ))}
+                </div>
             </main>
         </>
     )

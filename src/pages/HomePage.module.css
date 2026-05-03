@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Consolas';
+}
+
+.productsContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px 10px;
+    place-items: center;
+    margin: 50px;
+}
+
+.productsContainer img {
+    max-width: 300px;
+    border-radius: 6px;
+}
+
+.productsContainer button {
+    padding: 3px 5px;
+    background-color: #edc9c7;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 3px 0px #EDA6BB;
+    justify-self: center;
+}
+
+.productsContainer button:hover {
+    background-color: #FCD7D2;
+    box-shadow: 0px 3px 0px #EEA094;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.productName {
+    margin-bottom: 2px;
+}
+
+.productPrice {
+    font-weight: bold;
+    margin: 4px;
+}

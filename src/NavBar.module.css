@@ -1,0 +1,11 @@
+.websiteHeader {
+    font-size: 28px;
+    padding: 5px;
+    background-color: #868585;
+    text-align: center;
+}
+
+.websiteHeader a {
+    text-decoration: none;
+    color: #f7efe1;
+}
